@@ -1,5 +1,5 @@
 /*
- *  $Id: zorro.h,v 1.2 1998-06-08 20:28:17 geert Exp $
+ *  $Id: zorro.h,v 1.3 1998-06-21 20:36:11 geert Exp $
  *
  *  Amiga AutoConfig (Zorro) Bus Definitions
  *
@@ -114,7 +114,7 @@ struct Node {
     __u8    ln_Type;
     __s8    ln_Pri;		/* Priority, for sorting */
     __s8    *ln_Name;		/* ID string, null terminated */
-};
+} __attribute__ ((packed));
 
 struct ExpansionRom {
     /* -First 16 bytes of the expansion ROM */
@@ -129,7 +129,7 @@ struct ExpansionRom {
     __u8  er_Reserved0d;
     __u8  er_Reserved0e;
     __u8  er_Reserved0f;
-};
+} __attribute__ ((packed));
 
 /* er_Type board type bits */
 #define ERT_TYPEMASK	0xc0
@@ -152,7 +152,7 @@ struct ConfigDev {
     void		*cd_Driver;	/* pointer to node of driver */
     struct ConfigDev	*cd_NextCD;	/* linked list of drivers to config */
     __u32 		cd_Unused[4];	/* for whatever the driver wants */
-};
+} __attribute__ ((packed));
 
 #else /* __ASSEMBLY__ */
 
