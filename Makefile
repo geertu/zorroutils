@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.1 1998-06-08 11:06:37 rnhodek Exp $
+# $Id: Makefile,v 1.2 1998-06-21 20:46:27 geert Exp $
 # Makefile for Linux Zorro Utilities
 # Copyright (C) 1998 Geert Uytterhoeven <Geert.Uytterhoeven@cs.kuleuven.ac.be>
 
@@ -19,7 +19,7 @@ filter.o: filter.c zorroutils.h
 
 clean:
 	rm -f `find . -name "*~" -or -name "*.[oa]" -or -name "\#*\#" -or -name TAGS -or -name core`
-	rm -f lszorro zorro.h
+	rm -f lszorro
 
 install: all
 	install -o root -g root -m 755 -s lszorro $(PREFIX)/sbin
