@@ -4,7 +4,7 @@
 #	Maintained by Geert Uytterhoeven <zorro@linux-m68k.org>
 #	If you have any new entries, send them to the maintainer.
 #
-#	$Id: zorro.ids,v 1.13 1999-05-26 18:05:28 geert Exp $
+#	$Id: zorro.ids,v 1.14 2000-06-27 12:37:14 geert Exp $
 #
 
 # Manufacturers and Products. Please keep sorted.
@@ -359,6 +359,7 @@
 	1300  Warp Engine 40xx Accelerator, SCSI Host Adapter and RAM Expansion
 089e  ElBox Computer
 	0600  1200/4 RAM Expansion
+	1900  PowerFlyer IDE Interface
 0a00  Harms Professional
 	1000  030 Plus Accelerator
 	d000  3500 Professional Accelerator and RAM Expansion
@@ -379,6 +380,7 @@
 1212  Individual Computers
 	0000  Buddha IDE Interface
 	2a00  Catweasel IDE Interface and Floppy Controller
+	1700  X-Surf Ethernet Card
 1248  Kupke
 	0100  Golem HD 3000 HD Controller
 1267  RBM-Computertechnik
@@ -427,6 +429,7 @@
 38a5  Petsoff LP
 	0000  Delfina Audio Board
 	0100  Delfina Lite Audio Board
+	0200  Delfina Plus Audio Board
 3ff7  Uwe Gerlach
 	d400  RAM/ROM Miscellaneous Expansion Card
 4231  ACT
