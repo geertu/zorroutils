@@ -4,7 +4,7 @@
 #	Maintained by Geert Uytterhoeven <zorro@linux-m68k.org>
 #	If you have any new entries, send them to the maintainer.
 #
-#	$Id: zorro.ids,v 1.6 1998-10-02 09:48:15 geert Exp $
+#	$Id: zorro.ids,v 1.7 1998-10-05 08:02:21 geert Exp $
 #
 
 # Manufacturers and Products. Please keep sorted.
@@ -372,9 +372,9 @@
 	3900  Hurricane 2800 Accelerator and RAM Expansion
 	5700  Hurricane 2800 Accelerator and RAM Expansion
 102f  Ateo Concepts
-	fc00  AteoBus
-	fe00  Pixel64 Graphics Board
-	ff00  Pixel64 Graphics Board (RAM)
+#	xx00  AteoBus
+#	xx00  Pixel64 Graphics Board
+#	xx00  Pixel64 Graphics Board (RAM)
 1212  Individual Computers
 	0000  Buddha IDE Interface
 	2a00  Catweasel IDE Interface and Floppy Controller
