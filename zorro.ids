@@ -4,7 +4,7 @@
 #	Maintained by Geert Uytterhoeven <zorro@linux-m68k.org>
 #	If you have any new entries, send them to the maintainer.
 #
-#	$Id: zorro.ids,v 1.4 1998-08-16 21:42:43 geert Exp $
+#	$Id: zorro.ids,v 1.5 1998-09-19 16:30:08 geert Exp $
 #
 
 # Manufacturers and Products. Please keep sorted.
@@ -316,6 +316,7 @@
 	1700  Picasso IV Z2 Graphics Board
 	1800  Picasso IV Z3 Graphics Board
 	c900  Ariadne Ethernet Card and Parallel Ports
+	ca00  Ariadne II Ethernet Card
 087b  Utilities Unlimited
 	1500  Emplant Deluxe Macintosh Emulator
 	2000  Emplant Deluxe Macintosh Emulator
