@@ -1,5 +1,5 @@
 /*
- *	$Id: names.c,v 1.1 1998-06-08 11:06:37 rnhodek Exp $
+ *	$Id: names.c,v 1.2 1998-06-15 22:31:10 geert Exp $
  *
  *	Linux Zorro Utilities -- Device ID to Name Translation
  *
@@ -211,7 +211,7 @@ lookup_device(word v, byte i, byte j)
       if (e)
 	return e->name;
     }
-  sprintf(devbuf, "%04x", i);
+  sprintf(devbuf, "%02x:%02x", i, j);
   return devbuf;
 }
 
