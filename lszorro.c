@@ -1,5 +1,5 @@
 /*
- *	$Id: lszorro.c,v 1.2 1998-06-09 20:15:37 geert Exp $
+ *	$Id: lszorro.c,v 1.3 1998-06-21 20:49:14 geert Exp $
  *
  *	Linux Zorro Utilities -- List All Zorro Devices
  *
@@ -24,7 +24,7 @@ static struct zorro_filter filter;	/* Device filter */
 static int machine_readable;		/* Generate machine-readable output */
 static char *zorro_dir = PROC_BUS_ZORRO;
 
-static char options[] = "nvbxs:d:ti:p:m";
+static char options[] = "nvxs:d:i:p:m";
 
 static char help_msg[] = "\
 Usage: lszorro [<switches>]\n\
@@ -54,7 +54,8 @@ struct device {
       byte raw[0];
   } config;
 };
-#define config config.raw
+#define cd	config.cd
+#define raw	config.raw
 
 static struct device *first_dev, **last_dev = &first_dev;
 
@@ -136,7 +137,7 @@ scan_config(void)
 	  fprintf(stderr, "lszorro: Unable to open %s: %m\n", name);
 	  exit(1);
 	}
-      res = read(fd, d->config, how_much);
+      res = read(fd, d->raw, how_much);
       if (res < 0)
 	{
 	  fprintf(stderr, "lszorro: Error reading %s: %m\n", name);
@@ -163,7 +164,7 @@ scan_proc(void)
 static inline byte
 get_conf_byte(struct device *d, unsigned int pos)
 {
-  return d->config[pos];
+  return d->raw[pos];
 }
 
 /* Sorting */
@@ -215,163 +216,59 @@ show_terse(struct device *d)
 }
 
 static void
-show_bases(struct device *d, int cnt)
+show_bases(struct device *d)
 {
-#if 1
-#warning fix this
-#else
-  word cmd = get_conf_word(d, PCI_COMMAND);
-  int i;
-
-  for(i=0; i<6; i++)
+  if (verbose > 1)
+    printf("\tAddress: %08x (%08x bytes)\n", d->boardaddr, d->boardsize);
+  else
     {
-      unsigned long pos;
-      unsigned int flg = get_conf_long(d, PCI_BASE_ADDRESS_0 + 4*i);
-      if (buscentric_view)
-	pos = flg;
+      u32 size = d->boardsize;
+      char mag;
+      if (size & 0xfffff)
+	{
+	  size >>= 10;
+	  mag = 'K';
+	}
       else
-	pos = d->kernel_base_addr[i];
-      if (!pos || pos == 0xffffffff)
-	continue;
-      if (flg & PCI_BASE_ADDRESS_SPACE_IO)
 	{
-	  if (cmd & PCI_COMMAND_IO)
-	    {
-	      if (verbose > 1)
-		printf("\tRegion %d: ", i);
-	      else
-		putchar('\t');
-	      printf("I/O ports at %04lx\n", pos & PCI_BASE_ADDRESS_IO_MASK);
-	    }
+	  size >>= 20;
+	  mag = 'M';
 	}
-      else if (cmd & PCI_COMMAND_MEMORY)
-	{
-	  int t = flg & PCI_BASE_ADDRESS_MEM_TYPE_MASK;
-	  if (verbose > 1)
-	    printf("\tRegion %d: ", i);
-	  else
-	    putchar('\t');
-	  printf("Memory at ");
-	  if (t == PCI_BASE_ADDRESS_MEM_TYPE_64)
-	    {
-	      if (i < cnt - 1)
-		{
-		  i++;
-		  if (!buscentric_view)
-		    printf("%08x", get_conf_long(d, PCI_BASE_ADDRESS_0 + 4*i));
-		}
-	      else
-		printf("????????");
-	    }
-	  printf("%08lx (%s, %sprefetchable)\n",
-		 pos & PCI_BASE_ADDRESS_MEM_MASK,
-		 (t == PCI_BASE_ADDRESS_MEM_TYPE_32) ? "32-bit" :
-		 (t == PCI_BASE_ADDRESS_MEM_TYPE_64) ? "64-bit" :
-		 (t == PCI_BASE_ADDRESS_MEM_TYPE_1M) ? "low-1M 32-bit" : "???",
-		 (flg & PCI_BASE_ADDRESS_MEM_PREFETCH) ? "" : "non-");
-	}
+      printf("\t%08x (%d%c)\n", d->boardaddr, size, mag);
     }
-#endif
 }
 
 static void
 show_verbose(struct device *d)
 {
-#if 1
-#warning fix this
-#else
-  word status = get_conf_word(d, PCI_STATUS);
-  word cmd = get_conf_word(d, PCI_COMMAND);
-  word class = get_conf_word(d, PCI_CLASS_DEVICE);
-  byte bist = get_conf_byte(d, PCI_BIST);
-  byte latency = get_conf_byte(d, PCI_LATENCY_TIMER);
-  byte cache_line = get_conf_byte(d, PCI_CACHE_LINE_SIZE);
-  byte max_lat, min_gnt;
-  byte int_pin = get_conf_byte(d, PCI_INTERRUPT_PIN);
-  byte int_line = get_conf_byte(d, PCI_INTERRUPT_LINE);
-  unsigned int irq;
-  word subsys_v, subsys_d;
-#endif
-
   show_terse(d);
-
-#if 1
-#warning fix this
-#else
   if (verbose > 1)
     {
-      if (subsys_v)
-	printf("\tSubsystem ID: %04x:%04x\n", subsys_v, subsys_d);
-      printf("\tControl: I/O%c Mem%c BusMaster%c SpecCycle%c MemWINV%c VGASnoop%c ParErr%c Stepping%c SERR%c FastB2B%c\n",
-	     (cmd & PCI_COMMAND_IO) ? '+' : '-',
-	     (cmd & PCI_COMMAND_MEMORY) ? '+' : '-',
-	     (cmd & PCI_COMMAND_MASTER) ? '+' : '-',
-	     (cmd & PCI_COMMAND_SPECIAL) ? '+' : '-',
-	     (cmd & PCI_COMMAND_INVALIDATE) ? '+' : '-',
-	     (cmd & PCI_COMMAND_VGA_PALETTE) ? '+' : '-',
-	     (cmd & PCI_COMMAND_PARITY) ? '+' : '-',
-	     (cmd & PCI_COMMAND_WAIT) ? '+' : '-',
-	     (cmd & PCI_COMMAND_SERR) ? '+' : '-',
-	     (cmd & PCI_COMMAND_FAST_BACK) ? '+' : '-');
-      printf("\tStatus: 66Mhz%c UDF%c FastB2B%c ParErr%c DEVSEL=%s >TAbort%c <TAbort%c <MAbort%c >SERR%c <PERR%c\n",
-	     (status & PCI_STATUS_66MHZ) ? '+' : '-',
-	     (status & PCI_STATUS_UDF) ? '+' : '-',
-	     (status & PCI_STATUS_FAST_BACK) ? '+' : '-',
-	     (status & PCI_STATUS_PARITY) ? '+' : '-',
-	     ((status & PCI_STATUS_DEVSEL_MASK) == PCI_STATUS_DEVSEL_SLOW) ? "slow" :
-	     ((status & PCI_STATUS_DEVSEL_MASK) == PCI_STATUS_DEVSEL_MEDIUM) ? "medium" :
-	     ((status & PCI_STATUS_DEVSEL_MASK) == PCI_STATUS_DEVSEL_FAST) ? "fast" : "??",
-	     (status & PCI_STATUS_SIG_TARGET_ABORT) ? '+' : '-',
-	     (status & PCI_STATUS_REC_TARGET_ABORT) ? '+' : '-',
-	     (status & PCI_STATUS_REC_MASTER_ABORT) ? '+' : '-',
-	     (status & PCI_STATUS_SIG_SYSTEM_ERROR) ? '+' : '-',
-	     (status & PCI_STATUS_DETECTED_PARITY) ? '+' : '-');
-      if (cmd & PCI_COMMAND_MASTER)
+      const char *zorro;
+      switch (d->boardtype & ERT_TYPEMASK)
 	{
-	  printf("\tLatency: ");
-	  if (min_gnt)
-	    printf("%d min, ", min_gnt);
-	  if (max_lat)
-	    printf("%d max, ", max_lat);
-	  printf("%d set", latency);
-	  if (cache_line)
-	    printf(", cache line size %02x", cache_line);
-	  putchar('\n');
+	case ERT_ZORROII:
+	  zorro = "Zorro II";
+	  break;
+	case ERT_ZORROIII:
+	  zorro = "Zorro III";
+	  break;
+	default:
+	  zorro = "Unknown Zorro";
+	  break;
 	}
-      if (int_pin)
-	printf("\tInterrupt: pin %c routed to IRQ " IRQ_FORMAT "\n", 'A' + int_pin - 1, irq);
-    }
-  else
-    {
-      printf("\tFlags: ");
-      if (cmd & PCI_COMMAND_MASTER)
-	printf("bus master, ");
-      if (cmd & PCI_COMMAND_VGA_PALETTE)
-	printf("VGA palette snoop, ");
-      if (cmd & PCI_COMMAND_WAIT)
-	printf("stepping, ");
-      if (cmd & PCI_COMMAND_FAST_BACK)
-	printf("fast Back2Back, ");
-      if (status & PCI_STATUS_66MHZ)
-	printf("66Mhz, ");
-      if (status & PCI_STATUS_UDF)
-	printf("user-definable features, ");
-      printf("%s devsel",
-	     ((status & PCI_STATUS_DEVSEL_MASK) == PCI_STATUS_DEVSEL_SLOW) ? "slow" :
-	     ((status & PCI_STATUS_DEVSEL_MASK) == PCI_STATUS_DEVSEL_MEDIUM) ? "medium" :
-	     ((status & PCI_STATUS_DEVSEL_MASK) == PCI_STATUS_DEVSEL_FAST) ? "fast" : "??");
-      if (cmd & PCI_COMMAND_MASTER)
-	printf(", latency %d", latency);
-      if (int_pin)
-	if (d->kernel_irq)
-	  printf(", IRQ " IRQ_FORMAT, irq);
-	else
-	  printf(", IRQ ?");
+      printf("\tType: %s", zorro);
+      if (d->boardtype & ERTF_MEMLIST)
+	printf(" memory");
       putchar('\n');
     }
-#endif
-
-  show_bases(d, 6);
+  show_bases(d);
+  if (verbose > 1)
+    {
+      printf("\tSerial number: %08x\n", d->cd.cd_Rom.er_SerialNumber);
+      printf("\tSlot address: %04x\n", d->cd.cd_SlotAddr);
+      printf("\tSlot size: %04x\n", d->cd.cd_SlotSize);
+    }
 }
 
 static void
