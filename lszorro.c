@@ -1,5 +1,5 @@
 /*
- *	$Id: lszorro.c,v 1.1 1998-06-08 11:06:37 rnhodek Exp $
+ *	$Id: lszorro.c,v 1.2 1998-06-09 20:15:37 geert Exp $
  *
  *	Linux Zorro Utilities -- List All Zorro Devices
  *
@@ -435,6 +435,11 @@ main(int argc, char **argv)
   int i;
   char *msg;
 
+  if (argc == 2 && !strcmp(argv[1], "--version"))
+    {
+      puts("lszorro version " ZORROUTILS_VERSION);
+      return 0;
+    }
   filter_init(&filter);
   while ((i = getopt(argc, argv, options)) != -1)
     switch (i)
