@@ -4,7 +4,7 @@
 #	Maintained by Geert Uytterhoeven <zorro@linux-m68k.org>
 #	If you have any new entries, send them to the maintainer.
 #
-#	$Id: zorro.ids,v 1.7 1998-10-05 08:02:21 geert Exp $
+#	$Id: zorro.ids,v 1.8 1998-10-14 18:10:23 geert Exp $
 #
 
 # Manufacturers and Products. Please keep sorted.
@@ -343,8 +343,8 @@
 	2200  8MB RAM Expansion
 	2400  Viper Mk V/E-Matrix 530 SCSI Host Adapter and IDE Interface
 0891  Great Valley Products
-	0100  EGS 28/24 Spectrum Graphics Board
-	0200  EGS 28/24 Spectrum Graphics Board (RAM)
+	0100  EGS 28/24 Spectrum Graphics Board (RAM)
+	0200  EGS 28/24 Spectrum Graphics Board
 0892  Apollo
 	0100  A1200 FPU and RAM Expansion
 0893  Ingenieurbüro Helfrich
