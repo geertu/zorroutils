@@ -1,4 +1,4 @@
-This package contains the Linux Zorro Utilities, version 0.03.
+This package contains the Linux Zorro Utilities, version 0.04.
 
 Copyright (C) 1998--2000 Geert Uytterhoeven <geert@linux-m68k.org>
 
@@ -14,17 +14,17 @@ for details.
 
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-   The Linux Zorro Utilities contain a utility for dealing with the Zorro bus
-in Linux:
+    The Linux Zorro Utilities contain a utility for dealing with the Zorro bus
+    in Linux:
 
-	- lszorro: displays detailed information about all Zorro devices in the
-	  system, replacing the original /proc/zorro interface.
+      - lszorro: displays detailed information about all Zorro devices in the
+	system, replacing the original /proc/zorro interface.
 
-   See manual pages for more details.
+    See manual pages for more details.
 
-   If you have any bug reports or suggestions, send them to the author.
+    If you have any bug reports or suggestions, send them to the author.
 
-   Many IDs were obtained from ExpName/Identify ((C) Richard Körber) and by
-   looking at the NetBSD-Amiga kernel sources.
+    Many IDs were obtained from ExpName/Identify ((C) Richard Körber) and by
+    looking at the NetBSD-Amiga kernel sources.
 
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~

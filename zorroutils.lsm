@@ -1,7 +1,7 @@
 Begin3
 Title:          Linux Zorro Utilities
-Version:        0.03
-Entered-date:   000812
+Version:        0.04
+Entered-date:   000928
 Description:    This package contains a utility for inspecting devices
 		connected to the Zorro bus. Requires kernel version 2.1.106 or
 		newer (supporting the /proc/bus/zorro interface).
