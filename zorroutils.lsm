@@ -1,0 +1,14 @@
+Begin3
+Title:          Linux Zorro Utilities
+Version:        0.01
+Entered-date:   980607
+Description:    This package contains a utility for inspecting devices
+		connected to the Zorro bus. Requires kernel version 2.1.105 or
+		newer (supporting the /proc/bus/zorro interface).
+Keywords:       kernel, zorro, proc, lszorro
+Author:         Geert.Uytterhoeven@cs.kuleuven.ac.be (Geert Uytterhoeven)
+Maintained-by:  Geert.Uytterhoeven@cs.kuleuven.ac.be (Geert Uytterhoeven)
+Primary-site:   ftp.uni-erlangen.de pub/Linux/680x0/*/zorroutils-0.01.tar.gz
+Alternate-site: 
+Copying-policy: GPL
+End

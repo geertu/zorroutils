@@ -1,0 +1,82 @@
+.TH lszorro 8 "7 June 98" "zorroutils-0.01" "Linux Zorro Utilities"
+.IX lszorro
+.SH NAME
+lszorro \- list all Zorro devices
+.SH SYNOPSIS
+.B lszorro
+.RB [ options ]
+.SH DESCRIPTION
+.B lszorro
+is a utility for displaying information about devices connected to the Zorro
+bus. It requires Linux kernel 2.1.105 or newer and supersedes the original
+/proc/zorro interface found in earlier kernels.
+
+If you are going to report bugs in Zorro device drivers or in
+.I lszorro
+itself, please include output of "lszorro -vvx".
+
+.SH OPTIONS
+.TP
+.B -v
+Tells
+.I lszorro
+to be verbose and display detailed information about all devices.
+.TP
+.B -vv
+Tells
+.I lszorro
+to be very verbose and display even more information (actually everything the
+Zorro device is able to tell). The exact meaning of these data is not explained
+in this manual page, if you want to know more, consult
+.B /usr/include/linux/zorro.h
+or the Zorro specs.
+.TP
+.B -n
+Show Zorro manufacturer and (extended) product codes as numbers instead of
+looking them up in the Zorro ID database.
+.TP
+.B -x
+Show hexadecimal dump of the Zorro configuration space (struct ConfigDev).
+Useful for debugging of drivers and
+.I lszorro
+itself.
+.TP
+.B -s [<slot>]
+Show only the device in the specified slot. The number is hexadecimal.
+.TP
+.B -d [<manuf>]:[<product>]:[<epc>]
+Show only devices with specified manufacturer, product and extended product
+IDs.  All IDs are given in hexadecimal and may be omitted or given as "*"
+meaning "any value".  The extended product code (epc) is used for some GVP
+boards only.
+.TP
+.B -i <file>
+Use
+.B
+<file>
+as Zorro ID database instead of /etc/zorro.ids.
+.TP
+.B -p <dir>
+Use
+.B <dir>
+as directory containing Zorro bus information instead of /proc/bus/zorro.
+.TP
+.B -m
+Dump Zorro device data in machine readable form (both normal and verbose format
+supported) for easy parsing by scripts.
+
+.SH FILES
+.TP
+.B /etc/zorro.ids
+A list of all known Zorro IDs (manufacturers, products and extended product
+codes).
+.TP
+.B /proc/bus/zorro
+An interface to Zorro bus configuration space provided by the kernel. Contains
+per-card config space files and a
+.I
+devices
+file containing a list of all Zorro devices.
+
+.SH AUTHOR
+The Linux Zorro Utilities are maintained by Geert Uytterhoeven <zorro@linux-m68k.org>.

@@ -1,0 +1,30 @@
+This package contains the Linux Zorro Utilities, version 0.01.
+
+Copyright (C) 1998 Geert Uytterhoeven <Geert.Uytterhoeven@cs.kuleuven.ac.be>
+
+This package is heavily based on the Linux PCI Utilities, which are
+
+Copyright (C) 1998 Martin Mares <mj@atrey.karlin.mff.cuni.cz>
+
+All files in this package can be freely distributed and used according
+to the terms of the GNU General Public License, either version 2 or
+(at your opinion) any newer version. This is the same distribution
+policy as for the Linux kernel itself -- see /usr/src/linux/COPYING
+for details.
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+   The Linux Zorro Utilities contain a utility for dealing with the Zorro bus
+in Linux:
+
+	- lszorro: displays detailed information about all Zorro devices in the
+	  system, replacing the original /proc/zorro interface.
+
+   See manual pages for more details.
+
+   If you have any bug reports or suggestions, send them to the author.
+
+   Many IDs were obtained from ExpName/Identify ((C) Richard Körber) and by
+   looking at the NetBSD-Amiga kernel sources.
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
