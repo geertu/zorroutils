@@ -4,7 +4,7 @@
 #	Maintained by Geert Uytterhoeven <zorro@linux-m68k.org>
 #	If you have any new entries, send them to the maintainer.
 #
-#	$Id: zorro.ids,v 1.9 1998-12-01 09:02:14 geert Exp $
+#	$Id: zorro.ids,v 1.10 1998-12-07 12:01:51 geert Exp $
 #
 
 # Manufacturers and Products. Please keep sorted.
@@ -195,6 +195,7 @@
 	0c00  A1000 SCSI Host Adapter
 0804  Jochheim
 	0100  RAM Expansion
+	2000  RAM Expansion for A2630
 0807  Checkpoint Technologies
 	0000  Serial Solution Multi Serial
 0810  Edotronik
