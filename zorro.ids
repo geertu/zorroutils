@@ -4,7 +4,7 @@
 #	Maintained by Geert Uytterhoeven <zorro@linux-m68k.org>
 #	If you have any new entries, send them to the maintainer.
 #
-#	$Id: zorro.ids,v 1.2 1998-06-15 22:29:02 geert Exp $
+#	$Id: zorro.ids,v 1.3 1998-06-21 20:36:41 geert Exp $
 #
 
 # Manufacturers and Products. Please keep sorted.
@@ -35,8 +35,8 @@
 	2000  A560 RAM Expansion
 	4500  A2232 Prototype Multi I/O
 	4600  A2232 Multi I/O
-	5000  A2620 68020/RAM Accelerator and RAM Expansion
-	5100  A2630 68030/RAM Accelerator and RAM Expansion
+	5000  A2620 68020 Accelerator and RAM Expansion
+	5100  A2630 68030 Accelerator and RAM Expansion
 	5400  A4091 SCSI Host Adapter
 	5a00  A2065 Ethernet Card
 	6000  Romulator Card
@@ -228,7 +228,7 @@
 	0400  Oktagon 500 SCSI Host Adapter
 	0500  Oktagon 2008 SCSI Host Adapter
 	0600  Tandem AT-2008/508 IDE Interface
-	0700  Alpha RAM 1200 RAM Expansion
+	0700  Alpha 1200 RAM Expansion
 	0800  Oktagon 2008 RAM Expansion
 	1000  MultiFace I Multi I/O
 	1100  MultiFace II Multi I/O
@@ -335,7 +335,7 @@
 	2000  A1200 T68030 RTC Accelerator
 	2100  Viper Mk V/E-Matrix 530 Accelerator and RAM Expansion
 	2200  8MB RAM Expansion
-	2400  Viper Mk V/E-Matrix 530 SCSI/IDE SCSI Host Adapter and IDE Interface
+	2400  Viper Mk V/E-Matrix 530 SCSI Host Adapter and IDE Interface
 0891  Great Valley Products
 	0100  EGS 28/24 Spectrum Graphics Board
 	0200  EGS 28/24 Spectrum Graphics Board (RAM)
@@ -358,7 +358,7 @@
 0a50  Micronik
 	0a00  RCA 120 RAM Expansion
 0f0f  Micronik
-	0100  Z3i A1200 Zorro III + SCSI SCSI Host Adapter
+	0100  Z3i A1200 Zorro III Extender and SCSI Host Adapter
 1000  MegaMicro
 	0300  SCRAM 500 SCSI Host Adapter
 	0400  SCRAM 500 RAM Expansion
@@ -391,7 +391,7 @@
 	0200  Blizzard Accelerator
 	0600  Blizzard 1220-IV Accelerator
 	0a00  FastLane Z3 RAM Expansion
-	0b00  Blizzard 1230-II/Fastlane Z3/CyberSCSI/CyberStorm060 Accelerator and SCSI Host Adapter
+	0b00  Blizzard 1230-II/Fastlane Z3/CyberSCSI/CyberStorm060 Accelerator and/or SCSI Host Adapter
 	0c00  Blizzard 1220/CyberStorm Accelerator and SCSI Host Adapter
 	0d00  Blizzard 1230 Accelerator
 	1100  Blizzard 1230-IV/1260 Accelerator
@@ -432,7 +432,7 @@
 6766  Combitec
 8000  SKI Peripherals
 	0800  MAST Fireball SCSI Host Adapter
-	8000  SCSI/Dual Serial SCSI Host Adapter and Serial Card
+	8000  SCSI Host Adapter and Dual Serial Card
 a9ad  Reis-Ware
 	1100  Scan King Scanner Interface
 aa01  Cameron
