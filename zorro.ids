@@ -4,7 +4,7 @@
 #	Maintained by Geert Uytterhoeven <zorro@linux-m68k.org>
 #	If you have any new entries, send them to the maintainer.
 #
-#	$Id: zorro.ids,v 1.5 1998-09-19 16:30:08 geert Exp $
+#	$Id: zorro.ids,v 1.6 1998-10-02 09:48:15 geert Exp $
 #
 
 # Manufacturers and Products. Please keep sorted.
@@ -164,6 +164,10 @@
 	6900  A2000 68040 Accelerator
 	9600  Zeus Accelerator, SCSI Host Adapter and RAM Expansion
 	bb00  A500 68040 Accelerator
+# The following two are actually made by Ateo Concepts
+	fc00  AteoBus Expansion Bus
+	fe00  Pixel64 Graphics Board
+	ff00  Pixel64 Graphics Board (RAM)
 07ec  Xebec
 07f2  Spirit Technology
 	0100  Insider IN1000 RAM Expansion
@@ -367,6 +371,10 @@
 1028  Ronin/Imtronics
 	3900  Hurricane 2800 Accelerator and RAM Expansion
 	5700  Hurricane 2800 Accelerator and RAM Expansion
+102f  Ateo Concepts
+	fc00  AteoBus
+	fe00  Pixel64 Graphics Board
+	ff00  Pixel64 Graphics Board (RAM)
 1212  Individual Computers
 	0000  Buddha IDE Interface
 	2a00  Catweasel IDE Interface and Floppy Controller
