@@ -4,7 +4,7 @@
 #	Maintained by Geert Uytterhoeven <zorro@linux-m68k.org>
 #	If you have any new entries, send them to the maintainer.
 #
-#	$Id: zorro.ids,v 1.11 1998-12-30 17:05:02 geert Exp $
+#	$Id: zorro.ids,v 1.12 1998-12-31 12:42:47 geert Exp $
 #
 
 # Manufacturers and Products. Please keep sorted.
@@ -238,7 +238,7 @@
 	1000  MultiFace I Multi I/O
 	1100  MultiFace II Multi I/O
 	1200  MultiFace III Multi I/O
-	2000  MasterFrame II Graphics Board
+	2000  FrameMaster II Graphics Board
 	2100  Graffiti Graphics Board (RAM)
 	2200  Graffiti Graphics Board
 	4000  ISDN MasterCard ISDN Interface
