@@ -4,7 +4,7 @@
 #	Maintained by Geert Uytterhoeven <zorro@linux-m68k.org>
 #	If you have any new entries, send them to the maintainer.
 #
-#	$Id: zorro.ids,v 1.12 1998-12-31 12:42:47 geert Exp $
+#	$Id: zorro.ids,v 1.13 1999-05-26 18:05:28 geert Exp $
 #
 
 # Manufacturers and Products. Please keep sorted.
@@ -388,6 +388,7 @@
 1389  VMC
 	0100  ISDN Blaster Z2 ISDN Interface
 	0200  HyperCom 4 Multi I/O
+	0600  HyperCom 4+ Multi I/O
 157c  Information
 	6400  ISDN Engine I ISDN Interface
 2017  Vortex
