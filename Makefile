@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.2 1998-06-21 20:46:27 geert Exp $
+# $Id: Makefile,v 1.3 1998-06-21 21:07:03 geert Exp $
 # Makefile for Linux Zorro Utilities
 # Copyright (C) 1998 Geert Uytterhoeven <Geert.Uytterhoeven@cs.kuleuven.ac.be>
 
@@ -27,6 +27,4 @@ install: all
 	install -o root -g root -m 644 lszorro.8 $(MANPREFIX)/man/man8
 
 dist: clean
-	cp /usr/src/linux/include/linux/zorro.h .
 	sh -c 'X=`pwd` ; X=`basename $$X` ; cd .. ; tar czvvf /tmp/$$X.tar.gz $$X --exclude CVS --exclude tmp'
-	rm -f zorro.h
