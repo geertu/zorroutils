@@ -1,9 +1,9 @@
 /*
- *	$Id: names.c,v 1.2 1998-06-15 22:31:10 geert Exp $
+ *	$Id: names.c,v 1.3 2000-08-12 12:01:19 geert Exp $
  *
  *	Linux Zorro Utilities -- Device ID to Name Translation
  *
- *	Copyright (C) 1998 Geert Uytterhoeven
+ *	Copyright (C) 1998--2000 Geert Uytterhoeven
  *
  *	Can be freely distributed and used under the terms of the GNU GPL.
  */
@@ -19,7 +19,7 @@
 
 int show_numeric_ids;
 
-char *zorro_ids = ETC_ZORRO_IDS;
+char *zorro_ids = ZORRO_ID_DB;
 
 static byte *name_list;
 static int name_list_loaded;

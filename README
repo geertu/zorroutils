@@ -1,10 +1,10 @@
-This package contains the Linux Zorro Utilities, version 0.02.
+This package contains the Linux Zorro Utilities, version 0.03.
 
-Copyright (C) 1998 Geert Uytterhoeven <Geert.Uytterhoeven@cs.kuleuven.ac.be>
+Copyright (C) 1998--2000 Geert Uytterhoeven <geert@linux-m68k.org>
 
 This package is heavily based on the Linux PCI Utilities, which are
 
-Copyright (C) 1998 Martin Mares <mj@atrey.karlin.mff.cuni.cz>
+Copyright (C) 1998--2000 Martin Mares <mj@suse.cz>
 
 All files in this package can be freely distributed and used according
 to the terms of the GNU General Public License, either version 2 or

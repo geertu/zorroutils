@@ -1,25 +1,19 @@
 /*
- *	$Id: zorroutils.h,v 1.3 1998-06-21 20:49:40 geert Exp $
+ *	$Id: zorroutils.h,v 1.4 2000-08-12 12:01:19 geert Exp $
  *
  *	Linux Zorro Utilities -- Declarations
  *
- *	Copyright (C) 1998 Geert Uytterhoeven
+ *	Copyright (C) 1998--2000 Geert Uytterhoeven
  *
  *	Can be freely distributed and used under the terms of the GNU GPL.
  */
 
 #include <linux/types.h>
 
-#ifdef KERNEL_ZORRO_H
-#include <linux/zorro.h>
-#else
-#include "zorro.h"
-#endif
-
-#define ZORROUTILS_VERSION "0.02"
+#define ZORROUTILS_VERSION "0.03"
 
 #define PROC_BUS_ZORRO "/proc/bus/zorro"
-#define ETC_ZORRO_IDS "/etc/zorro.ids"
+#define ZORRO_ID_DB "/usr/share/zorro.ids"
 
 /* Types */
 

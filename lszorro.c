@@ -1,9 +1,9 @@
 /*
- *	$Id: lszorro.c,v 1.3 1998-06-21 20:49:14 geert Exp $
+ *	$Id: lszorro.c,v 1.4 2000-08-12 12:01:19 geert Exp $
  *
  *	Linux Zorro Utilities -- List All Zorro Devices
  *
- *	Copyright (C) 1998 Geert Uytterhoeven
+ *	Copyright (C) 1998--2000 Geert Uytterhoeven
  *
  *	Can be freely distributed and used under the terms of the GNU GPL.
  */
@@ -15,6 +15,7 @@
 #include <unistd.h>
 
 #include "zorroutils.h"
+#include "zorro.h"
 
 /* Options */
 
@@ -35,7 +36,7 @@ Usage: lszorro [<switches>]\n\
 -s [<slot>]\tShow only device in selected slot\n\
 -d [<manuf>]:[<prod>]:[<epc>]\tShow only selected devices\n\
 -m\t\tProduce machine-readable output\n\
--i <file>\tUse specified ID database instead of " ETC_ZORRO_IDS "\n\
+-i <file>\tUse specified ID database instead of " ZORRO_ID_DB "\n\
 -p <dir>\tUse specified bus directory instead of " PROC_BUS_ZORRO "\n\
 ";
 

@@ -1,9 +1,9 @@
 /*
- *	$Id: filter.c,v 1.1 1998-06-08 11:06:37 rnhodek Exp $
+ *	$Id: filter.c,v 1.2 2000-08-12 12:01:19 geert Exp $
  *
  *	Linux Zorro Utilities -- Device Filtering
  *
- *	Copyright (C) 1998 Geert Uytterhoeven
+ *	Copyright (C) 1998--2000 Geert Uytterhoeven
  *
  *	Can be freely distributed and used under the terms of the GNU GPL.
  */
