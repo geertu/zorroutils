@@ -4,7 +4,7 @@
 #	Maintained by Geert Uytterhoeven <zorro@linux-m68k.org>
 #	If you have any new entries, send them to the maintainer.
 #
-#	$Id: zorro.ids,v 1.1 1998-06-08 11:06:36 rnhodek Exp $
+#	$Id: zorro.ids,v 1.2 1998-06-15 22:29:02 geert Exp $
 #
 
 # Manufacturers and Products. Please keep sorted.
@@ -47,6 +47,8 @@
 	0300  A2090/A2090A Combitec/MacroSystem SCSI Host Adapter
 02f4  Progressive Peripherals & Systems
 	0200  EXP8000 RAM Expansion
+	6900  A2000 68040 Accelerator
+	9600  68040 Accelerator
 02ff  Kolff Computer Supplies
 	0000  KCS Power PC Board ISA Bus Bridge
 03ec  Cardco Ltd.
@@ -91,6 +93,7 @@
 	0100  A2065 Ethernet Card
 	0900  A560 ArcNet Card
 	0a00  A4066 Ethernet Card
+	2000  1600-GX Graphics Board
 0420  Supra
 	0100  SupraDrive 4x4 SCSI Host Adapter
 	0200  1000 RAM Expansion
@@ -111,6 +114,7 @@
 	0300  AT500 RAM Expansion
 06e1  Great Valley Products
 	0800  Impact Series I SCSI Host Adapter and RAM Expansion
+	2000  Impact Vision 24 Graphics Board
 07da  ByteBox
 	0000  A500
 07db  Hacker Test Board
@@ -146,6 +150,7 @@
 	0d00  Impact 3001 IDE Interface
 	1600  GForce 040/060 Accelerator and SCSI Host Adapter
 	2000  Impact Vision 24 Graphics Board
+	4400  Rembrandt Graphics Board
 	ff00  GForce 040 Accelerator
 07e5  California Access (Synergy)
 	0100  Malibu SCSI Host Adapter
@@ -175,8 +180,14 @@
 	0100  ALF 2 SCSI Host Adapter
 	0200  ALF 2 SCSI Host Adapter
 	0300  ALF 3 SCSI Host Adapter
+	0400  Oktagon 500 SCSI Host Adapter
+	0600  Tandem AT-2008/508 IDE Interface
+	0800  Oktagon 2008 RAM Expansion
+	1000  MultiFace I Multi I/O
+	2000  Framebuffer Miscellaneous Expansion Card
+	4000  ISDN MasterCard ISDN Interface
 0802  Cardco Ltd.
-	0400  Kronos SCSI Host Adapter
+	0400  Kronos 2000 SCSI Host Adapter
 	0c00  A1000 SCSI Host Adapter
 0804  Jochheim
 	0100  RAM Expansion
@@ -214,6 +225,7 @@
 	1000  DL2000 Modem
 	e000  RAM Works RAM Expansion
 082c  BSC/Alfadata
+	0400  Oktagon 500 SCSI Host Adapter
 	0500  Oktagon 2008 SCSI Host Adapter
 	0600  Tandem AT-2008/508 IDE Interface
 	0700  Alpha RAM 1200 RAM Expansion
@@ -234,7 +246,8 @@
 	0100  Nexus SCSI Host Adapter
 	0800  Nexus RAM Expansion
 0838  Impulse
-	0000  FireCracker 24 Graphics Board
+	0000  FireCracker 24 Graphics Board (NTSC)
+	0100  FireCracker 24 Graphics Board (PAL)
 0840  IVS
 	0200  GrandSlam PIC 2 RAM Expansion
 	0400  GrandSlam PIC 1 RAM Expansion
@@ -263,6 +276,7 @@
 	0100  Multi I/O
 0851  Applied Magic Inc.
 	0100  DMI Resolver Graphics Board
+	0200  Vivid 24 Graphics Board
 	0600  Digital Broadcaster Video Board
 085e  GFX-Base
 	0000  GDA-1 VRAM Graphics Board
@@ -280,6 +294,10 @@
 0865  ACS
 0866  Software Results Enterprises
 	0100  Golden Gate 2 Bus+ ISA Bus Bridge
+086a  Unknown
+	0100  Horizon Graphics Board
+	0200  Blackbox Graphics Board
+	0300  Voyager Graphics Board
 086d  Masoboshi
 	0300  MasterCard SC201 RAM Expansion
 	0400  MasterCard MC702 SCSI Host Adapter and IDE Interface
@@ -406,6 +424,7 @@
 	0600  Retina Graphics Board
 	0800  MultiEvolution SCSI Host Adapter
 	0c00  Toccata Audio Board
+	0d00  Toccata Pro Audio Board
 	1000  Retina Z3 Graphics Board
 	1200  VLab Motion Video Board
 	1300  Altais Graphics Board
