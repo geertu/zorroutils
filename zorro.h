@@ -1,5 +1,7 @@
 /*
- *  linux/zorro.h -- Amiga AutoConfig (Zorro) Bus Definitions
+ *  $Id: zorro.h,v 1.2 1998-06-08 20:28:17 geert Exp $
+ *
+ *  Amiga AutoConfig (Zorro) Bus Definitions
  *
  *  Copyright (C) 1995-1998 Geert Uytterhoeven
  *
