@@ -4,7 +4,7 @@
 #	Maintained by Geert Uytterhoeven <zorro@linux-m68k.org>
 #	If you have any new entries, send them to the maintainer.
 #
-#	$Id: zorro.ids,v 1.8 1998-10-14 18:10:23 geert Exp $
+#	$Id: zorro.ids,v 1.9 1998-12-01 09:02:14 geert Exp $
 #
 
 # Manufacturers and Products. Please keep sorted.
@@ -380,6 +380,8 @@
 	2a00  Catweasel IDE Interface and Floppy Controller
 1248  Kupke
 	0100  Golem HD 3000 HD Controller
+1267  RBM-Computertechnik
+	0100  IOBlix Multi I/O
 1388  ITH
 	0100  ISDN-Master II ISDN Interface
 1389  VMC
