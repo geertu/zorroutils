@@ -4,7 +4,7 @@
 #	Maintained by Geert Uytterhoeven <zorro@linux-m68k.org>
 #	If you have any new entries, send them to the maintainer.
 #
-#	$Id: zorro.ids,v 1.3 1998-06-21 20:36:41 geert Exp $
+#	$Id: zorro.ids,v 1.4 1998-08-16 21:42:43 geert Exp $
 #
 
 # Manufacturers and Products. Please keep sorted.
@@ -325,6 +325,7 @@
 0885  ArMax
 	0000  OmniBus Graphics Board
 088d  ZEUS Electronic Development
+	0300  ISDN Interface
 	0400  Spider Video Board
 088f  NewTek
 	0000  VideoToaster Video Board
