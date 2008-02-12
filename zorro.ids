@@ -4,7 +4,7 @@
 #	Maintained by Geert Uytterhoeven <zorro@linux-m68k.org>
 #	If you have any new entries, please send them to the maintainer.
 #
-#	$Id: zorro.ids,v 1.19 2002-10-14 13:08:58 geert Exp $
+#	$Id: zorro.ids,v 1.20 2008-02-12 08:18:18 geert Exp $
 #
 
 # Manufacturers and Products. Please keep sorted.
@@ -46,6 +46,8 @@
 	6000  Romulator Card
 	6100  A3000 Test Fixture [Miscellaneous Expansion Card]
 	6700  A2386-SX [ISA Bus Bridge]
+	6800  CD32 MPEG/FMV cartridge
+	6A00  CD32 MPEG/FMV cartridge
 	7000  A2065 [Ethernet Card]
 0203  Commodore West Chester
 	0300  A2090/A2090A Combitec/MacroSystem [SCSI Host Adapter]
